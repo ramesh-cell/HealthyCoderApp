@@ -19,7 +19,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 class BMICalculatorTest {
 
-    private String environment = "prod";
+    private String environment = "dev";
 
     @BeforeAll
     static void beforeAll() {
