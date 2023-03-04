@@ -8,12 +8,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.DisabledOnOs;
 import org.junit.jupiter.api.condition.OS;
 import org.junit.jupiter.api.function.Executable;
@@ -41,6 +36,9 @@ class BMICalculatorTest {
 
         @ParameterizedTest(name = "weight={0}, height={1}")
         @CsvFileSource(resources = "/diet-recommended-input-data.csv", numLinesToSkip=1)
+       /* @ValueSource(doubles = {89.0,95.0,110.5})
+        Double coderWeight
+        double weight = coderWeight;*/
         void should_ReturnTrue_When_DietRecommended(Double coderWeight, Double coderHeight) {
             // given or arrange
             double weight = coderWeight;
@@ -125,6 +123,7 @@ class BMICalculatorTest {
         }
 
         @Test
+       // @RepeatedTest(value = 10,name=RepeatedTest.LONG_DISPLAY_NAME)
         void should_ReturnNullWithWorstBMICoder_When_CoderListEmpty() {
 
             // given
