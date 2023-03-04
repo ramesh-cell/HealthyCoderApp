@@ -19,7 +19,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 class BMICalculatorTest {
 
-    private String environment = "dev";
+    private String environment = "prod";
 
     @BeforeAll
     static void beforeAll() {
@@ -87,6 +87,7 @@ class BMICalculatorTest {
         @Test
         @DisplayName(">>> sample method display name")
         @DisabledOnOs(OS.LINUX)
+            //@Disabled
         void should_ReturnCoderWithWorstBMI_When_CoderListNotEmpty() {
 
             // given
